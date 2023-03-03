@@ -1,0 +1,109 @@
+Collections Need of Collections Framework
+=========================================
+
+
+1.What is the Need of collection ? 
+==================================
+ 
+Array is an indexed collection of fixed number of homogenous data element.
+The main advantages of array is we can represents multiple values with single variable.
+So that resuability of code will be improved.
+
+Limitation of Object Type Array : 
+------------------------------
+
+Arrays are fixed in size i.e. once we created an array with fixed size there no chance of increasing or 
+decreasing it's size based on our requirement.Hence to use array compulsary we should know the size inadvanced
+Which may not possible always.
+
+Array can hold only homogenous data element : 
+
+Student[] s=new Student[1000]
+s[0] = new Student;(correct)
+s[1] = new Costumer;(wrong)
+
+We can resolve this problem using Object Array : 
+
+Object[] s=new Object[1000]
+s[0] = new Student;(correct)
+s[1] = new Costumer;(correct)
+
+Arrays concept not implemented based on some standard Data Structure hence readymade method support not available
+For every requirement we need to write code explicitly.Which is complexity of programming. 
+
+To over come above limitation of Array we should go for collections 
+
+Collections are growable in Nature. i.e. Based on our requirement we can decrease or increase the size.
+collection can holds both Homogenous and Heterogenous data structure.
+
+Every collection class is implemented based on some standard data structure.Hence ready method support is availavble for every requirement.
+Being a programmer we have to use this methods and we are not responsible to provide implentation.
+
+
+2.Difference between Array and Collections ? 
+
+Arrays
+======
+
+1. Arrays are fixed in Size.
+2.Wrt to memory Arrays are not recommended to use.
+3.Wrt to performance Arrays are  recommended to use.
+4.Arrays can hold only homogenous data type elememt.
+5.There is no underlying data structure in Arrays So no ready made method support will be there.
+6.Array can hold both primitive and object type.
+
+Collections
+===========
+1.Collections are growable in Nature i.e. Based on our requiremnt we increase or decrease the Size.
+2.Wrt to memory Collections are  recommended to use.
+3.Wrt to performance Collections are not recommended to use.
+4.Collections can hold bothe homogenous and heterogenous elements.
+5.Every collections class implemented based on some standard Data Srtucture 
+  Hence ready method support is available for every requirement.
+6.Collection can hold only object not primitive data types.
+
+
+Collection  : 
+=============
+
+If we want to represent a group of individual object as single entity then we should go for collection.  
+
+
+Collection Framework :
+======================
+
+It defines several classes and interfaces which can be used a group of objects as a single entity.
+
+
+Difference between Collection and Collections : 
+===============================================
+
+Collection is an iterface which can use to represent group of individual object as a single entity.
+
+Collections is an utility class present in Java.util.package to define several utility method 
+i.e (Sorting , Searching ....) for collection object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

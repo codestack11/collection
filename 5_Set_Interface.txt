@@ -1,0 +1,169 @@
+Set Interface
+=============
+
+* It is a child Interface of collection interface.
+* If we want to represent group of individual object as single entity where duplicates are not allowed 
+  and insertion order must not be preserved then we should go for SET interface.
+* Set Interface dosen't implement any new method we have to use only collection interface methods.  
+
+The set interface is present in java.util package and extends the Collection interface is an unordered collection of objects 
+in which duplicate values cannot be stored. It is an interface that implements the mathematical set. 
+This interface contains the methods inherited from the Collection interface and adds a feature that restricts the 
+insertion of the duplicate elements. There are two interfaces that extend the set implementation namely SortedSet and NavigableSet.
+
+
+The navigable set extends the sorted set interface. Since a set doesn’t retain the insertion order, 
+the navigable set interface provides the implementation to navigate through the Set. 
+The class which implements the navigable set is a TreeSet which is an implementation of a self-balancing tree. 
+Therefore, this interface provides us with a way to navigate through this tree.
+
+
+Declaration: The Set interface is declared as:
+
+public interface Set extends Collection 
+
+// Obj is the type of the object to be stored in Set 
+Set<Obj> set = new HashSet<Obj> (); 
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+HashSet
+=======
+
+* The underlying Datastructure is Hashtable.
+* Duplicates are not allowed . If we tried to inserts the duplicate elements 
+  we won't get any compile time or runtime error.The add() simply returns false.
+* Insertion order is not preserved and all the object will be inserted based on hash-code
+  of an object.
+* Heterogenous object are allowed.
+* NULL insertion is possible.
+* Implements serializable and clonable interface but not Random Access .
+* HashSet is best choice if our frequent operation is search operation.
+
+Constructor Of HashSet
+======================
+
+HashSet h = new HashSet();
+- Creates an empty HashSet object with default initial capacity is 16 
+  and default fill ratio 0.75
+  
+HashSet h = new HashSet(int initialCapacity);
+- Creates an empty HashSet object with specified initial capacity is 16 
+  and default fill ratio 0.75
+  
+HashSet h = new HashSet(int initialCapacity,Float loadFactor);
+- Creates an empty HashSet object with specified initial capacity is 16 
+  and  specified loadfactor (fill ratio 0.75).
+  
+  
+HashSet h = new HashSet(Collection c);
+- For inter conversion between collection object.
+
+LoadFactor or Fill Ratio
+========================
+
+- After loading the how much factor,a new HashSet object will be created 
+  That factor is called as Load Factor or Cill Ratio.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+LinkHashSet
+===========
+
+* It is child class of Hashset.
+* Introduced in version 1.4 version.
+* It is exactly same as the HashSet except the following difference.
+
+
+Difference
+
+             HashSet                                  LinkHashset
+             ======                                   ===========
+    * Underlying Data Structure is              * Underlying Data Structure is              
+      Hashtable.                                  Hashtable and LinkList.	
+    * Insertion order is not preserved.         * Insertion order is preserved.
+	* Introduced in version 1.2 version.        * Introduced in version 1.4 version.
+
+
+* LinkHashSet is best choice to develop cache based applications where duplicated are not allowed 
+  and insertion order must be preserved.
+  
+  
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SortedSet
+=========
+
+* It is a child interface of Set interface.
+* If we want to represent group of individual objects according to some sorting order
+   and duplicates are not allowed then we should go for sorted Set.
+   
+SortedSet Specific Methods
+==========================
+
+* Object first() - It returns first element of the SortedSet.
+* Object last() - It returns last element of the SortedSet.
+* SortedSet headSet(Object obj) - returns the SortedSet whose elements are less < Obj.
+* SortedSet tailSet(Object obj) - returns the SortedSet whose elements are >= Obj.
+* SortedSet tailSet(Object obj1,Object obj2) - returns the SortedSet whose elements are >= Obj or < Obj.
+* Comparator comparator() - returns comparator object that describes underlying sorting technique
+  It we are using default natural sorting order then we will get null.
+  
+  
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+TreeSet
+=======
+
+* The underlying data structure for treeSet is Balanced Tree.
+* Duplicate Objects are not allowed.
+* Insertion order not preserved,but all the object will be inserted according to some sorting 
+  order.
+* Heterogenous Objects are not allowed. if we are trying to insert then we will get run time 
+  exception saying ClassCastException.
+* NULL insertion order is allowed but only Once.
+  
+  
+TreeSet Constructors
+====================
+
+TreeSet t = new TreeSet();
+- Creates an empty TreeSet objects Where elements will be inserted according to the default 
+  Natural Sorting Order.
+ 
+TreeSet t = new TreeSet(Comparator c);
+- Creates an empty TreeSet objects Where elements will be inserted according to the customized  
+  Natural Sorting Order.
+  
+TreeSet t = new TreeSet(SortedSet  c);
+
+TreeSet t = new TreeSet(Collection c);
+
+NULL Acceptance
+===============
+
+* For Empty TreeSet as a first Element null insertion is possible.
+  But After inserting that NULL If we trying to insert any other elemnt 
+  we will get NullPointerException.
+* For non-empty TreeSet If we try to insert Null then we will get
+  NullPointerException.
+  
+  
+Note : 
+======
+
+* If we are depending on default natural sorting order then Objects Should be Homogenous 
+  and comparable other wise we will get e=runtime exception saying classCastException.
+* An Object is said to be comparable if and only if teh corresponding class implements 
+  java.lang.comparable interface.
+* String class and wrapper classes already implements comparable interface But StringBuffer dosen't 
+  implements Comparable interface.  
+
+
+
+
+
+
+  

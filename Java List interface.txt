@@ -1,0 +1,19 @@
+List Interface : java.util.list
+-------------------------------
+
+
+* It is the child interface of collection.
+* List contains the order element.
+* May includes duplicates.
+* Support the index based search,random access but element can be easily inserted
+  irrepective of the position. 
+* If we want to represent a group of individual object as asingle entity where 
+  duplicates are allowed and insertion order must be preserved then we should 
+  go for List.
+* We can differentiate duplicates by using index.
+* We can preserve insertion order using index,hence index play a very important role in 
+  list interface.
+* Multiple null elements can be stored.  
+* Elements by their position can be accessed.
+* List interface is implemented by the classes ArrayList, LinkedList, Vector, and Stack.
+* Through the ListIterator, we can iterate the list in forward and backward directions.

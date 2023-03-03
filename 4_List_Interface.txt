@@ -1,0 +1,417 @@
+List Interface : java.util.list
+-------------------------------
+
+
+* It is the child interface of collection.
+* List contains the order element.
+* May includes duplicates.
+* Support the index based search,random access but element can be easily inserted
+  irrepective of the position. 
+* If we want to represent a group of individual object as asingle entity where 
+  duplicates are allowed and insertion order must be preserved then we should 
+  go for List.
+* We can differentiate duplicates by using index.
+* We can preserve insertion order using index,hence index play a very important role in 
+  list interface.
+* Multiple null elements can be stored.  
+* Elements by their position can be accessed.
+* List interface is implemented by the classes ArrayList, LinkedList, Vector, and Stack.
+* Through the ListIterator, we can iterate the list in forward and backward directions.
+
+
+
+Java List vs ArrayList
+======================
+
+List is an interface whereas ArrayList is the implementation class of List.
+
+
+Java ListIterator Interface
+===========================
+
+ListIterator Interface is used to traverse the element in a backward and forward direction.
+
+public interface ListIterator<E> extends Iterator<E>  
+
+
+Java List Methods
+=================
+
+Method	                                                          Description
+
+void add(int index, E element)	                        It is used to insert the specified element at the specified position in a list.
+
+boolean add(E e)	                                    It is used to append the specified element at the end of a list.
+
+boolean addAll(Collection<? extends E> c)	            It is used to append all of the elements in the specified collection to the end of a list.
+
+boolean addAll(int index, Collection<? extends E> c)	It is used to append all the elements in the specified collection, starting at the specified position of the list.
+
+void clear()	                                        It is used to remove all of the elements from this list.
+
+boolean equals(Object o)	                            It is used to compare the specified object with the elements of a list.
+
+int hashcode()	                                        It is used to return the hash code value for a list.
+
+E get(int index)	                                    It is used to fetch the element from the particular position of the list.
+
+boolean isEmpty()	                                    It returns true if the list is empty, otherwise false.
+
+int lastIndexOf(Object o)	                            It is used to return the index in this list of the last occurrence of the specified element, or -1 if the list does not contain this element.
+
+Object[] toArray()	                                    It is used to return an array containing all of the elements in this list in the correct order.
+
+<T> T[] toArray(T[] a)	                                It is used to return an array containing all of the elements in this list in the correct order.
+
+boolean contains(Object o)	                            It returns true if the list contains the specified element
+
+boolean containsAll(Collection<?> c)	                It returns true if the list contains all the specified element
+
+int indexOf(Object o)	                                It is used to return the index in this list of the first occurrence of the specified element, or -1 if the List does not contain this element.
+
+E remove(int index)	                                    It is used to remove the element present at the specified position in the list.	
+
+boolean remove(Object o)	                            It is used to remove the first occurrence of the specified element.	
+
+boolean removeAll(Collection<?> c)	                    It is used to remove all the elements from the list.	
+
+void replaceAll(UnaryOperator<E> operator)	            It is used to replace all the elements from the list with the specified element.
+	
+void retainAll(Collection<?> c)	                        It is used to retain all the elements in the list that are present in the specified collection.	
+
+E set(int index, E element)	                            It is used to replace the specified element in the list, present at the specified position.	
+
+void sort(Comparator<? super E> c)	                    It is used to sort the elements of the list on the basis of specified comparator.	
+
+Spliterator<E> spliterator()	                        It is used to create spliterator over the elements in a list.	
+
+List<E> subList(int fromIndex, int toIndex)	            It is used to fetch all the elements lies within the given range.	
+
+int size()	                                            It is used to return the number of elements present in the list.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ArrayList
+=========
+
+Iterable 
+--extends-- 
+collection 
+---extends---
+List 
+----implements--- 
+AbstarctList
+--implements--
+ArrayList
+
+Java ArrayList class uses a dynamic array for storing the elements. 
+It is like an array, but there is no size limit. We can add or remove elements anytime. 
+So, it is much more flexible than the traditional array. It is found in the java.util package. 
+It is like the Vector in C++.
+
+The ArrayList in Java can have the duplicate elements also. 
+It implements the List interface so we can use all the methods of List interface here. 
+The ArrayList maintains the insertion order internally.
+It inherits the AbstractList class and implements List interface.
+The important points about Java ArrayList class are:
+Java ArrayList class can contain duplicate elements.
+Java ArrayList class maintains insertion order.
+Java ArrayList class is non synchronized
+Java ArrayList allows random access because array works at the index basis.
+In ArrayList, manipulation is little bit slower than the LinkedList in Java because a lot of 
+shifting needs to occur if any element is removed from the array list.
+
+* The Underlined Data Structure Resiezable Array or Growable Array.
+* Duplicates are allowed.
+* Insertioned order is preserved.
+* Heterogenous object are allowed [Except Treeset & TreeMap] everywhere Heterogenous Object are allowed.
+* Null insertion is possible.
+* ArrayList l=new ArrayList(); Having default initial Capacity is 10.
+* New Capacity = (Current capacity * 3)/2 +1.
+* Capacity in this Manner 10,16,25.......
+
+ArrayList a =new ArrayList();
+Created an empty arrayListobject with default capacity of 10.
+Once ArrayList reached it's Map capacity a new ArrayList will be created with 
+New Capacity = (Current capacity * 3)/2 +1.
+* Every collection Interfaces and classes implements serizable interface.
+* Usually we can use collections to hold and transfer objects from one place to another place to provide support 
+for this requirement every collections already implements Serializable and cloneable interfaces.
+
+* ArrayList and Vector Classes implements RandomAccess interface So that we can access any Random element with the same speed
+* Hence our frequent opearation is retrievl operation then ArrayList is the best choice.
+* Java ArrayList class is non synchronized
+
+Random Access
+=============
+
+* Present in java.util.* package.
+* It dosen't contains any methods and it is a marker interface.
+
+* ArrayList is our Best choice if our frequent operation is retrieval operation 
+(Because ArrayList implemets RandomAccess element)
+
+* ArrayList is worst choice if our frequent operation is insertion or deletion.
+
+Hierarchy of ArrayList class
+============================
+
+As shown in the above diagram, Java ArrayList class extends AbstractList class which implements List interface. 
+The List interface extends the Collection and Iterable interfaces in hierarchical order.
+
+
+public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable
+
+Constructors of ArrayList
+=========================
+        Constructor	                                     Description
+		
+        ArrayList()	                                     It is used to build an empty array list.
+        ArrayList(Collection<? extends E> c)	         It is used to build an array list that is initialized with the elements of the collection c.
+        ArrayList(int capacity)	                         It is used to build an array list that has the specified initial capacity.
+
+
+Methods of ArrayList
+===================
+      Method	                                                                    Description
+void add (int index, E element)	                                                    It is used to insert the specified element at the specified position in a list.
+
+boolean add (E e)	                                                                It is used to append the specified element at the end of a list.
+
+boolean addAll(Collection<? extends E> c)	                                        It is used to append all of the elements in the specified collection to the end of this list, in the order that they are returned by the specified collection's iterator.
+
+boolean addAll(int index, Collection<? extends E> c)	                            It is used to append all the elements in the specified collection, starting at the specified position of the list.
+
+void clear()	                                                                    It is used to remove all of the elements from this list.
+
+void ensureCapacity(int requiredCapacity)	                                        It is used to enhance the capacity of an ArrayList instance.
+
+E get(int index)	                                                                It is used to fetch the element from the particular position of the list.
+
+boolean isEmpty()	                                                                It returns true if the list is empty, otherwise false.
+
+Iterator()
+
+listIterator()
+
+int lastIndexOf(Object o)	                                                        It is used to return the index in this list of the last occurrence of the specified element, or -1 if the list does not contain this element.
+
+Object[] toArray()	                                                                It is used to return an array containing all of the elements in this list in the correct order.
+
+<T> T[] toArray(T[] a)	                                                            It is used to return an array containing all of the elements in this list in the correct order.
+
+Object clone()	                                                                    It is used to return a shallow copy of an ArrayList.
+
+boolean contains(Object o)	                                                        It returns true if the list contains the specified element
+
+int indexOf(Object o)	                                                            It is used to return the index in this list of the first occurrence of the specified element, or -1 if the List does not contain this element.
+
+E remove(int index)	                                                                It is used to remove the element present at the specified position in the list.
+
+boolean remove (Object o)	                                                        It is used to remove the first occurrence of the specified element.
+
+boolean removeAll(Collection<?> c)	                                                It is used to remove all the elements from the list.
+
+boolean removeIf(Predicate<? super E> filter)	                                    It is used to remove all the elements from the list that satisfies the given predicate.
+
+protected void removeRange(int fromIndex, int toIndex)	                            It is used to remove all the elements lies within the given range.
+
+void replaceAll(UnaryOperator<E> operator)	                                        It is used to replace all the elements from the list with the specified element.
+
+void retainAll(Collection<?> c)	                                                    It is used to retain all the elements in the list that are present in the specified collection.
+
+E set(int index, E element)	                                                        It is used to replace the specified element in the list, present at the specified position.
+
+void sort(Comparator<? super E> c)	                                                It is used to sort the elements of the list on the basis of specified comparator.
+
+Spliterator<E> spliterator()	                                                    It is used to create spliterator over the elements in a list.
+
+List<E> subList(int fromIndex, int toIndex)	                                        It is used to fetch all the elements lies within the given range.
+
+int size()	                                                                        It is used to return the number of elements present in the list.
+
+void trimToSize()	                                                                It is used to trim the capacity of this ArrayList instance to be the list's current size.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+LinkList
+========
+
+Java LinkedList class uses a doubly linked list to store the elements. It provides a linked-list data structure. 
+It inherits the AbstractList class and implements List and Deque interfaces.
+
+The important points about Java LinkedList are:
+Java LinkedList class can contain duplicate elements.
+Java LinkedList class maintains insertion order.
+Java LinkedList class is non synchronized.
+In Java LinkedList class, manipulation is fast because no shifting needs to occur.
+Java LinkedList class can be used as a list, stack or queue.
+
+* The underlying Data Structure is Doubly LinkList.
+* Insertion order is preserved.
+* Duplicated are allowed.
+* Heterogenous object are allowed.
+* Null insertion is Possible.
+* LinkedList implemets Serializable and Clonable interfaces but not Random Access interface.
+* LinkedList is the best choice if our Random operation is insertion or deletion.
+* LinkedList is the not best choice if our Random operation is retrival.
+* Usually we are using LinkList for stacks and the Queues to provide for this requirement 
+  LinkList defines following specific methods
+   void addFirst(Object o);
+   void addLast(Object o);
+   Object getFirst(Object o);
+   Object getLast(Object o);
+   Object removeFirst(Object o);
+   Object removeLast(Object o);
+   
+Hierarchy of LinkedList class
+==============================
+
+As shown in the above diagram, Java LinkedList class extends AbstractSequentialList class and implements List and Deque interfaces.   
+   
+Constructors of Java LinkedList
+===============================
+
+          Constructor	                                                        Description
+         LinkedList()	                                                        It is used to construct an empty list.
+         LinkedList(Collection<? extends E> c)	                                It is used to construct a list containing the elements of the specified 
+		                                                                        collection, in the order, they are returned by the collection's iterator.
+																				Constructors of Java LinkedList
+
+LinkedList class declaration
+============================
+
+Let's see the declaration for java.util.LinkedList class.
+
+public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>, Deque<E>, Cloneable, Serializable 
+	
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Vector
+======
+
+Vector is like the dynamic array which can grow or shrink its size. Unlike array, 
+we can store n-number of elements in it as there is no size limit. It is a part of Java 
+Collection framework since Java 1.2. It is found in the java.util package and implements 
+the List interface, so we can use all the methods of List interface here.
+
+It is recommended to use the Vector class in the thread-safe implementation only. 
+If you don't need to use the thread-safe implementation, you should use the ArrayList, the ArrayList will perform better in such case.
+
+The Iterators returned by the Vector class are fail-fast. In case of concurrent modification, 
+it fails and throws the ConcurrentModificationException.
+
+Vector is synchronized.
+Java Vector contains many legacy methods that are not the part of a collections framework.
+
+It is similar to the ArrayList, but with two differences-
+
+* The underlying Data Structure for the vector is resizable array.
+* Duplicates objects are allowed.
+* Insertion order is preserved,
+* 'null' insertion is possible.
+* Heterogenous objects are allowed.
+* Vector class implemets serizable, cloneable and RandomAccess interfaces.
+* Most of the Methods present in Vectior is synchronized . Hence vector object is thread safe.
+* Best choice if frequent operation is retrival.
+
+
+Vector Specific Methods
+=======================
+
+For adding objects
+     
+	 add(Object o)          ---  from collection
+	 add(index i,Object o)  ---  from List
+	 addElement(Object o)   ---  from Vector
+	 
+For removing an Elements
+     
+     Remove(Object o);             --- 	 from collection
+	 removeElement(Object o);      ---   from Vector
+	 remove(int index);            ---   from List
+	 RemoveElementAt(int index);   ---   from Vector
+	 clear();                      ---   from collection
+	 removeAllElement();           ---   from Vector
+	 
+For Accessing Element 
+
+     Object get(int index);        --- from collection
+     Object elementAt(int index);  ---   from Vector
+     Object firstElement();        ---   from Vector
+     Object lastElement();	       ---   from Vector
+	 
+Other Methods
+
+     int Size();
+     int capacity();
+     Enumerationelement();
+
+
+
+Java Vector class Declaration
+=============================
+public class Vector<E>  
+extends Object<E>  
+implements List<E>, Cloneable, Serializable  
+
+
+
+Constructors of Vector Classes
+==============================
+
+Vector v = new Vector();
+- Creates empty vector object with default initial capacity 10.
+- When vector reaches it's initial capacity a new vector will be created with 
+  new capacity = 2 * currentcapacity
+ 
+Vector v = new Vector(int initialcapacity); 
+- Creates an empty vector object with specifies initial capacity.
+
+Vector v = new Vector(int initialcapacity,int incremenralCapacity); 
+
+Vector v = new Vector(collection c);
+- creates an equalivent vector object with same initial capacity.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Stack
+=====
+
+* It is child class of vector.
+* It is specially class for Last In First Out (LIFO) Order.
+
+Constructor of Stack
+====================
+Stack s - new Statck();
+
+Methods of the Stack Class
+===========================
+
+We can perform push, pop, peek and search operation on the stack. 
+The Java Stack class provides mainly five methods to perform these operations. Along with this, it also provides all the methods of the Java Vector class.
+
+Method	Modifier and Type	Method              Description 
+
+empty()	boolean	                                The method checks the stack is empty or not.
+
+push(E item) E	                                The method pushes (insert) an element onto the top of the stack.
+
+pop()	E	                                    The method removes an element from the top of the stack and returns the same element as the value of that function.
+
+peek()	E	                                    The method looks at the top element of the stack without removing it.
+
+search(Object o) int	                        The method searches the specified object and returns the position of the object.
+
+	 
+	 
